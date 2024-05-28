@@ -31,8 +31,8 @@ public class Courses {
   private String description;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", referencedColumnName = "id")
-  private Users users;
+  @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+  private Users teacher;
 
   @ToString.Exclude
   @EqualsAndHashCode.Exclude
