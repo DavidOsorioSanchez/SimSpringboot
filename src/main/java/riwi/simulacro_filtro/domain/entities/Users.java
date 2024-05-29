@@ -36,4 +36,6 @@ public class Users {
   @EqualsAndHashCode.Exclude
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = false)
   private List<Enroller> enrollers;
+
+  //no se si se tiene que vincular sender y receiver con el list
 }
