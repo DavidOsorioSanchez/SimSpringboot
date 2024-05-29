@@ -4,6 +4,8 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +32,7 @@ public class Users {
   private String password;
   private String email;
   private String fullName;
+  @Enumerated(EnumType.STRING)
   private Role role;
 
   @ToString.Exclude
@@ -37,5 +40,5 @@ public class Users {
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = false)
   private List<Enroller> enrollers;
 
-  //no se si se tiene que vincular sender y receiver con el list
+  // no se si se tiene que vincular sender y receiver con el list
 }
