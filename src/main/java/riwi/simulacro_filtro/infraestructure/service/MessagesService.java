@@ -4,8 +4,23 @@ import java.util.List;
 
 import org.aspectj.bridge.IMessage;
 import org.aspectj.bridge.ISourceLocation;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.AllArgsConstructor;
+import riwi.simulacro_filtro.api.dto.request.MessagesRequest;
+import riwi.simulacro_filtro.api.dto.response.MessagesResponse;
+import riwi.simulacro_filtro.domain.entities.Messages;
+import riwi.simulacro_filtro.domain.entities.Users;
+import riwi.simulacro_filtro.domain.repositories.MessagesRepository;
+import riwi.simulacro_filtro.util.enums.Role;
+import riwi.simulacro_filtro.util.exception.BadRequestException;
+import riwi.simulacro_filtro.util.messages.messageError;
+
+@AllArgsConstructor
 public class MessagesService implements IMessage{
+
+  @Autowired
+  private final MessagesRepository messagesRepository;
 
   @Override
   public boolean getDeclared() {
@@ -115,4 +130,30 @@ public class MessagesService implements IMessage{
     throw new UnsupportedOperationException("Unimplemented method 'isWarning'");
   }
   
+  private Messages find(Long id) {
+    return this.messagesRepository.findById(id)
+        .orElseThrow(() -> new BadRequestException(messageError.idNotFound("messages")));
+  }
+
+  // private Messages requestToEntity(MessagesRequest request) {
+  //   if (Role.TEACHER == this.Users.getRole() ) {
+      
+  //   }
+  //   return Messages.builder()
+  //       .menssageContent(request.getMenssageContent())
+  //       .sentMessage(request.getSentMessage())
+        
+  //       .build();
+  // }
+
+  // private MessagesResponse entityToResponseMessages(Messages entity) {
+
+  //   return MessagesResponse.builder()
+  //       .id(entity.getId())
+  //       .userName(entity.getUserName())
+  //       .email(entity.getEmail())
+  //       .fullName(entity.getFullName())
+  //       .role(entity.getRole())
+  //       .build();
+  // }
 }

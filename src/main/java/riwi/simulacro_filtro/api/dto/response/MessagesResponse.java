@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MessagesResponse {
+  private Long id;
   private String menssageContent;
   private String sentMessage;
-  private UserToSender sender_id;
-  private UserToReciever receiver_id;
+  private UsersResponse sender_id;
+  private UsersResponse receiver_id;
   private CoursesResponse courses_id;
 }

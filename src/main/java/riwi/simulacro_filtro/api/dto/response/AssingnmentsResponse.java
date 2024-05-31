@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class AssingnmentsResponse {
+  private Long id;
   private String assingnmentsTitle;
   private String description;
   private LocalDateTime dueDate;

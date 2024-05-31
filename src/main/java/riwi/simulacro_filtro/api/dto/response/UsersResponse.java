@@ -11,6 +11,7 @@ import riwi.simulacro_filtro.util.enums.Role;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsersResponse{
+  private Long id;
   private String userName;
   private String email;
   private String fullName;

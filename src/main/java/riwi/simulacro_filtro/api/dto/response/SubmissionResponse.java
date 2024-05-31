@@ -12,9 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SubmissionResponse {
+  private Long id;
   private String content;
   private LocalDateTime submissionDate;
   private double grade;
-  private Long user_id;
-  private Long assingnment_id;
+  private UsersResponse user;
+  private AssingnmentsResponse assingnment;
 }

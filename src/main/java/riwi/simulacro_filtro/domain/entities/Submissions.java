@@ -1,5 +1,7 @@
 package riwi.simulacro_filtro.domain.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ public class Submissions {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String content;
-  private String submissionDate;
+  private LocalDateTime submissionDate;
   @DecimalMax("5.2")
   private double grade;
 

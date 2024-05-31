@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnrollerResponse {
+  private Long id;
   private LocalDateTime enrollerDate;
-  private BasicCoursesResponse user;
+  private CoursesResponse user;
   private CoursesResponse course;
 }
