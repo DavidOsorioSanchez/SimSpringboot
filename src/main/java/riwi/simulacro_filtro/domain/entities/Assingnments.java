@@ -1,5 +1,7 @@
 package riwi.simulacro_filtro.domain.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ public class Assingnments {
   private Long id;
   private String assingnmentsTitle;
   private String description;
-  private String dueDate;
+  private LocalDateTime dueDate;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "lesson_id", referencedColumnName = "id")

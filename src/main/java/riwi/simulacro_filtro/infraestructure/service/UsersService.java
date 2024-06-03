@@ -75,13 +75,13 @@ public class UsersService implements IUser {
   }
 
   private UsersResponse entityToResponseUser(Users entity) {
-    
+
     return UsersResponse.builder()
-        .id(entity.getId())
-        .userName(entity.getUserName())
-        .email(entity.getEmail())
-        .fullName(entity.getFullName())
-        .role(entity.getRole())
-        .build();
+            .id(entity.getId())
+            .userName(entity.getUserName())
+            .email(entity.getEmail())
+            .fullName(entity.getFullName())
+            .role(entity.getRole())
+            .build();
   }
 }

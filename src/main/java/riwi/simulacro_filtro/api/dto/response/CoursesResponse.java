@@ -15,5 +15,5 @@ public class CoursesResponse {
   private Long id;
   private String coursesName;
   private String description;
-  private List<UsersResponse> teacher;
+  private UsersResponse teacher;
 }
